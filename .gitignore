@@ -19,6 +19,8 @@
 *.jpg
 *.png
 *.bmp
+*.swp
+build/
 batch/
 Build/
 build2/
