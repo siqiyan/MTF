@@ -14,6 +14,7 @@
 #include "mtf/AM//KLD.h"
 #include "mtf/AM//LKLD.h"	
 #include "mtf/AM//MI.h"
+#include "mtf/AM//HIST.h"
 #include "mtf/AM//SPSS.h"
 #include "mtf/AM//SSIM.h"
 #include "mtf/AM//NCC.h"
@@ -96,6 +97,7 @@
 	template class mtf::SM< mtf::NCC,  mtf::SSM >;\
 	template class mtf::SM< mtf::CCRE,  mtf::SSM >;\
 	template class mtf::SM< mtf::MI,  mtf::SSM >;\
+	template class mtf::SM< mtf::HIST,  mtf::SSM >;\
 	template class mtf::SM< mtf::SAD,  mtf::SSM >;\
 	template class mtf::SM< mtf::RIU,  mtf::SSM >;\
 	template class mtf::SM< mtf::NGF,  mtf::SSM >;\
@@ -158,6 +160,7 @@
 	template class mtf::SM< mtf::NCCDist >;\
 	template class mtf::SM< mtf::CCREDist >;\
 	template class mtf::SM< mtf::MIDist >;\
+	template class mtf::SM< mtf::HISTDist >;\
 	template class mtf::SM< mtf::RIUDist >;\
 	template class mtf::SM< mtf::NGFDist >;\
 	template class mtf::SM< mtf::SADDist >;
@@ -192,7 +195,8 @@
 	template class mtf::SM< mtf::MCRIU,  mtf::SSM,  mtf::SSM2 >;\
 	template class mtf::SM< mtf::MCCCRE,  mtf::SSM,  mtf::SSM2 >;\
 	template class mtf::SM< mtf::MCSAD,  mtf::SSM,  mtf::SSM2 >;\
-	template class mtf::SM< mtf::MI,  mtf::SSM,  mtf::SSM2 >;
+	template class mtf::SM< mtf::MI,  mtf::SSM,  mtf::SSM2 >;\
+	template class mtf::SM< mtf::HIST,  mtf::SSM,  mtf::SSM2 >;
 
 #define _REGISTER_HTRACKERS_SSM(SM, SSM) \
 	_REGISTER_HTRACKERS_AM(SM, SSM, LieHomography)\
@@ -253,7 +257,8 @@
 	template class mtf::FESM< mtf::MCRIU,  mtf::SSM, mtf::HT, mtf::JT >;\
 	template class mtf::FESM< mtf::MCCCRE,  mtf::SSM, mtf::HT, mtf::JT >;\
 	template class mtf::FESM< mtf::MCSAD,  mtf::SSM, mtf::HT, mtf::JT >;\
-	template class mtf::FESM< mtf::MI,  mtf::SSM, mtf::HT, mtf::JT >;
+	template class mtf::FESM< mtf::MI,  mtf::SSM, mtf::HT, mtf::JT >;\
+	template class mtf::FESM< mtf::HIST,  mtf::SSM, mtf::HT, mtf::JT >;
 
 #define _REGISTER_ESM(HT, JT) \
 	_REGISTER_ESM_AM(HT, JT, LieHomography)\

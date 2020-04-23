@@ -75,6 +75,7 @@
 #include "../AM/src/KLD.cc"
 #include "../AM/src/LKLD.cc"	
 #include "../AM/src/MI.cc"
+#include "../AM/src/HIST.cc"
 #include "../AM/src/SPSS.cc"
 #include "../AM/src/SSIM.cc"
 #include "../AM/src/NCC.cc"

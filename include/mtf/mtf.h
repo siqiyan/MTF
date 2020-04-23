@@ -69,6 +69,7 @@
 #include "mtf/AM/RSCV.h"
 #include "mtf/AM/LRSCV.h"	
 #include "mtf/AM/MI.h"
+#include "mtf/AM/HIST.h"
 #include "mtf/AM/CCRE.h"
 #include "mtf/AM/SPSS.h"
 #include "mtf/AM/SSIM.h"
@@ -966,6 +967,8 @@ inline TrackerBase *getTracker(const char *sm_type, const char *am_type,
 		return getTracker<LKLD>(sm_type, ssm_type, cast_params(LKLD));
 	} else if(!strcmp(am_type, "mi")){
 		return getTracker<MI>(sm_type, ssm_type, cast_params(MI));
+	} else if(!strcmp(am_type, "hist")){
+		return getTracker<HIST>(sm_type, ssm_type, cast_params(HIST));
 	} else if(!strcmp(am_type, "spss")){
 		return getTracker<SPSS>(sm_type, ssm_type, cast_params(SPSS));
 	} else if(!strcmp(am_type, "ssim")){
@@ -1152,6 +1155,9 @@ inline AMParams_ getAMParams(const char *am_type, const char *ilm_type){
 	} else if(!strcmp(am_type, "mi") || !strcmp(am_type, "mcmi") || !strcmp(am_type, "mi3")){
 		return AMParams_(new MIParams(am_params.get(), mi_n_bins, mi_pre_seed, mi_pou,
 			getPixMapper(pix_mapper), debug_mode));
+	} else if(!strcmp(am_type, "hist")){
+		return AMParams_(new HISTParams(am_params.get(), mi_n_bins, mi_pre_seed, mi_pou,
+			getPixMapper(pix_mapper), debug_mode));
 	} else if(!strcmp(am_type, "spss") || !strcmp(am_type, "mcspss") || !strcmp(am_type, "spss3")){
 		return AMParams_(new SPSSParams(am_params.get(), spss_k,
 			getPixMapper(pix_mapper)));
@@ -1215,6 +1221,8 @@ inline AppearanceModel *getAM(const char *am_type, const char *ilm_type){
 		return new LKLD(cast_params(LKLD));
 	} else if(!strcmp(am_type, "mi")){
 		return new MI(cast_params(MI));
+	} else if(!strcmp(am_type, "hist")){
+		return new HIST(cast_params(HIST));
 	} else if(!strcmp(am_type, "spss")){
 		return new SPSS(cast_params(SPSS));
 	} else if(!strcmp(am_type, "ssim")){
