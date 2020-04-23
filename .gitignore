@@ -20,6 +20,7 @@
 *.png
 *.bmp
 *.swp
+tags
 build/
 batch/
 Build/
